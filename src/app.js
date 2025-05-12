@@ -14,20 +14,13 @@ window.onload = function() {
 
   let finalExcuse = "";
 
-  function getExcuse() {
+  function getRandomElement(array) {
 
-    
-
-    let excuse1 = who[Math.floor((Math.random() * 4))];
-    let excuse2 = action[Math.floor((Math.random() * 4))];
-    let excuse3 = what[Math.floor((Math.random() * 3))];
-    let excuse4 = when[Math.floor((Math.random() * 5))];
-
-    finalExcuse = excuse1 + " " + excuse2 + " " + excuse3 + " " + excuse4;
-
+    return array[Math.floor(Math.random() * array.length)]
   } 
 
-  getExcuse()
+  finalExcuse = getRandomElement(who) + " " + getRandomElement(action) + " " + getRandomElement(what) + " " + getRandomElement(when);
+
   let title = document.getElementById("excuse")
   title.innerHTML = finalExcuse
 };
